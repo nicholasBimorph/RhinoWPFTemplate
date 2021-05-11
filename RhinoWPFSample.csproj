@@ -105,6 +105,23 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <SourceDlls Include="$(TargetDir)*.dll" />
+      <SourcePdbs Include="$(TargetDir)*.pdb" />
+      <SourceRHP Include="$(TargetDir)*.rhp" />
+    </ItemGroup>
+    <RemoveDir Directories="C:\Program Files\Rhino 6\Plug-ins\Sybarite\" />
+    <RemoveDir Directories="C:\Program Files\Rhino 7\Plug-ins\Sybarite\" />
+    <Copy SourceFiles="@(SourceDlls)" DestinationFolder="C:\Program Files\Rhino 6\Plug-ins\Sybarite\" />
+    <Copy SourceFiles="@(SourcePdbs)" DestinationFolder="C:\Program Files\Rhino 6\Plug-ins\Sybarite\" />
+    <Copy SourceFiles="@(SourceRHP)" DestinationFolder="C:\Program Files\Rhino 6\Plug-ins\Sybarite\" />
+    <Copy SourceFiles="@(SourceDlls)" DestinationFolder="C:\Program Files\Rhino 7\Plug-ins\Sybarite\" />
+    <Copy SourceFiles="@(SourcePdbs)" DestinationFolder="C:\Program Files\Rhino 7\Plug-ins\Sybarite\" />
+    <Copy SourceFiles="@(SourceRHP)" DestinationFolder="C:\Program Files\Rhino 7\Plug-ins\Sybarite\" />
+  </Target>
+
   <PropertyGroup>
     <PostBuildEvent>Copy "$(TargetPath)" "$(TargetDir)$(ProjectName).rhp"
 Erase "$(TargetPath)"</PostBuildEvent>
