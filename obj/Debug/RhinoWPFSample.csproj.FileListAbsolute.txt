@@ -1,0 +1,2 @@
+C:\Users\NicholasRawitscher\source\repos\RhinoWPFSample\obj\Debug\Styles\ColorStyles.baml
+C:\Users\NicholasRawitscher\source\repos\RhinoWPFSample\obj\Debug\RhinoWPFSample_MarkupCompile.cache
